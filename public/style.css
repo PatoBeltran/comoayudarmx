@@ -329,3 +329,18 @@ body {
 .filter {
   margin-right: 1em;
 }
+
+.map-container {
+	width: 100%;
+}
+
+.map-container iframe{
+	width: 100%;
+	display: block;
+	pointer-events: none;
+	position: relative;
+}
+
+.map-container iframe.clicked{
+	pointer-events: auto;
+}
