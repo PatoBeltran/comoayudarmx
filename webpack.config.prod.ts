@@ -4,7 +4,7 @@ import * as HtmlWebpackPlugin from 'html-webpack-plugin';
 import * as CopyWebpackPlugin from "copy-webpack-plugin";
 
 const config: webpack.Configuration = {
-    entry: "./src/index.tsx",
+    entry: "./src/client/index.tsx",
     output: {
         path: path.join(__dirname, 'dist', 'client'),
         filename: "bundle.js",
@@ -21,7 +21,7 @@ const config: webpack.Configuration = {
         new HtmlWebpackPlugin({
             title: 'Cómo Ayudar MX | Información para ayudar.',
             chunksSortMode: 'dependency',
-            template: path.resolve(__dirname, './src/index.ejs')
+            template: path.resolve(__dirname, './src/client/index.ejs')
         }),
         new webpack.DefinePlugin({
             'process.env': {

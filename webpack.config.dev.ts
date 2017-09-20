@@ -6,7 +6,7 @@ import * as CopyWebpackPlugin from "copy-webpack-plugin";
 const config: webpack.Configuration = {
     entry: [
         "react-hot-loader/patch",
-        "./src/index.tsx",
+        "./src/client/index.tsx",
     ],
     output: {
         path: path.join(__dirname, 'dist', 'client'),
@@ -25,7 +25,7 @@ const config: webpack.Configuration = {
         new HtmlWebpackPlugin({
             title: 'Cómo Ayudar MX | Información para ayudar.',
             chunksSortMode: 'dependency',
-            template: path.resolve(__dirname, './src/index.ejs')
+            template: path.resolve(__dirname, './src/client/index.ejs')
         }),
         new webpack.DefinePlugin({
             'process.env': {
