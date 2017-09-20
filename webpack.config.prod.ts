@@ -1,6 +1,7 @@
 import * as webpack from "webpack";
 import * as path from "path";
 import * as HtmlWebpackPlugin from 'html-webpack-plugin';
+import * as CopyWebpackPlugin from "copy-webpack-plugin";
 
 const config: webpack.Configuration = {
     entry: "./src/index.tsx",
@@ -31,6 +32,7 @@ const config: webpack.Configuration = {
             beautify: false,
             sourceMap: false
           }),
+        new CopyWebpackPlugin([{ from: 'public' }]),  
     ],
 
     module: {

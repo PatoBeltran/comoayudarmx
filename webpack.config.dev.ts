@@ -1,6 +1,7 @@
 import * as webpack from "webpack";
 import * as path from "path";
-import * as HtmlWebpackPlugin from 'html-webpack-plugin';
+import * as HtmlWebpackPlugin from "html-webpack-plugin";
+import * as CopyWebpackPlugin from "copy-webpack-plugin";
 
 const config: webpack.Configuration = {
     entry: [
@@ -31,6 +32,7 @@ const config: webpack.Configuration = {
                 'NODE_ENV': JSON.stringify('development'),
             }
         }),
+        new CopyWebpackPlugin([{ from: 'public' }]),
     ],
 
     module: {

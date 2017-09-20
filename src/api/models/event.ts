@@ -1,8 +1,8 @@
 import { Schema, model, Document } from 'mongoose';
 
 interface IEvent extends Document {
-    title: String,
-    location: String,
+    title: string,
+    location: string,
     date: Date
 }
 
