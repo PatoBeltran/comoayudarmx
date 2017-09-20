@@ -1,4 +1,4 @@
-import { ActionType, Action, ModalType } from '../types';
+import { ActionType, Action, ModalType } from '../../types';
 
 export function toggle_modal(type: ModalType, show: boolean): any {
     var aType;
@@ -33,6 +33,21 @@ export function load_cards(): Action {
         cards: Cards
     }
 }
+
+export function load_contacts(): Action {
+    return {
+        type: ActionType.LOAD_CONTACTS,
+        contacts: Contacts
+    }
+}
+
+var Contacts = [
+    { title: "Protección Civil CDMX", phone: "5683-2222", location: "CDMX" },
+    { title: "Emergencias", phone: "911", location: "Todo México" },
+    { title: "Locatel CDMX", phone: "5658-1111", location: "CDMX" },
+    { title: "IMSS", phone: "01-800-623-2323", location: "Todo México" },
+    { title: "Cruz Roja", phone: "55-5557-5757", location: "CDMX" },
+];
 
 var Cards = [
     //{title: "Donación Topos", description: "Los Topos son una asosiación de rescatistas indepe…tencilios necesarios para el rescate de personas.", type: "Monetaria", location: "Todo el mundo.", link: "https://twitter.com/topos/status/908000616575680512"},

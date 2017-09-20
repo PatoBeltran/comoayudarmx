@@ -1,4 +1,4 @@
-import { Action, ActionType } from '../types';
+import { Action, ActionType } from '../../types';
 
 export function cards(state: any[] = [], action: Action) {
     switch (action.type) {

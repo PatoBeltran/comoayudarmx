@@ -3,7 +3,10 @@ import { Router } from 'express';
 import * as bodyParser from 'body-parser';
 import { connect } from "mongoose";
 
-import { eventRoutes } from './routes/events'
+import { eventRoutes } from './routes/events';
+import { cardRoutes } from './routes/cards';
+import { contactRoutes } from './routes/contacts';
+
 import serverConfig from '../config';
 
 // MongoDB Connection
@@ -23,6 +26,8 @@ app.use('/api', router);
 
 // Add all custom routes
 eventRoutes(router);
+cardRoutes(router);
+contactRoutes(router);
 
 // start app
 app.listen(serverConfig.port, (error) => {
