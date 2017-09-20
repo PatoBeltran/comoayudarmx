@@ -6,7 +6,7 @@ interface ICardProps {
     type: string,
     location: string,
     moreInfo: string,
-    phone: number
+    phone: string
 }
 
 export class CardItem extends React.Component<ICardProps, any> {

@@ -5,7 +5,8 @@ export enum CardType {
     Medical,
     Blood,
     Housing,
-    Assestment
+    Assestment,
+    Phone
 }
 
 export enum ModalType {
@@ -20,7 +21,7 @@ export interface ModalState {
 }
 
 export enum ActionType {
-    LOAD_CARDS = 'LOAD_CARDS',    
+    LOAD_CARDS = 'LOAD_CARDS',
     ADD_CARD = 'ADD_CARD',
     SHOW_ABOUT_MODAL = 'SHOW_ABOUT_MODAL',
     HIDE_ABOUT_MODAL = 'HIDE_ABOUT_MODAL',

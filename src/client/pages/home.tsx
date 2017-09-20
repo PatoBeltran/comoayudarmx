@@ -5,7 +5,7 @@ import { MainHeader } from '../components/header';
 import { Intro } from '../components/intro';
 import { AboutModal } from '../components/aboutModal';
 import { HowToModal } from '../components/howtoModal';
-import { ModalType } from '../types';
+import { ModalType } from '../../types';
 import Cards from '../containers/cards';
 
 import { toggle_modal } from '../actions'
@@ -40,7 +40,7 @@ function mapDispatchToProps(dispatch: any) {
       show_about: () => dispatch(toggle_modal(ModalType.About, true)),
       hide_about: () => dispatch(toggle_modal(ModalType.About, false)),
       show_howto: () => dispatch(toggle_modal(ModalType.HowTo, true)),
-      hide_howto: () => dispatch(toggle_modal(ModalType.HowTo, false)),      
+      hide_howto: () => dispatch(toggle_modal(ModalType.HowTo, false)),
   }
 }
 
