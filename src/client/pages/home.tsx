@@ -15,7 +15,7 @@ class Home extends React.Component<any, any> {
     return (
       <div>
         <MainHeader show_about={this.props.show_about}/>
-        <Intro />
+        <Intro show_about={this.props.show_about} />
         <Cards />
         <AboutModal display={this.props.showAboutModal} close={this.props.hide_about}/>
         <HowToModal display={this.props.showHowToModal} close={this.props.hide_howto}/>

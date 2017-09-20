@@ -5,26 +5,48 @@ interface ICardProps {
     description: string,
     type: string,
     location: string,
-    moreInfo: string
+    moreInfo: string,
+    phone: number
 }
 
 export class CardItem extends React.Component<ICardProps, any> {
   render() {
+    const { title, description, type, location, moreInfo, phone } = this.props;
     return (
         <article className="card">
-            <h2 className="card__title">{this.props.title}</h2>
-            <p className="card__desc">{this.props.description}</p>
+            <h2 className="card__title">{title}</h2>
+            {
+              description &&
+                <p className="card__desc">{description}</p>
+            }
             <div className="card__info">
                 <div className="card__type">
-                    <h4>Tipo de donación:</h4>
-                    <h3><i className="fa fa-cutlery"></i>{this.props.type}</h3>
+                {
+                  phone ?
+                    <div>
+                      <h4>Teléfono de Emergencia:</h4>
+                      <h3>
+                        <a href={`tel:${phone}`}>
+                          <i className="fa fa-phone"></i>
+                          {phone}
+                        </a>
+                      </h3>
+                    </div>:
+                    <div>
+                      <h4>Tipo de donación:</h4>
+                      <h3>
+                        <i className="fa fa-cutlery"></i>
+                        {type}
+                      </h3>
+                    </div>
+                }
                 </div>
                 <div className="card__location">
                     <h4>Puedes ayudar desde:</h4>
-                    <h3><i className="fa fa-globe"></i>{this.props.location}</h3>
+                    <h3><i className="fa fa-globe"></i>{location}</h3>
                 </div>
             </div>
-            <a className="card__button" target="__blank" href={this.props.moreInfo}>Más Información</a>
+            <a className="card__button" target="__blank" href={moreInfo}>Más Información</a>
         </article>
     );
   }

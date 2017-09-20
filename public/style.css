@@ -54,7 +54,11 @@ body {
 .logo {
 	font-family: 'Roboto Slab', sans-serif;
 	font-size: 1em;
+}
+
+.logo a {
 	color: #F73535;
+	text-decoration: none;
 }
 
 .mainNav a {
@@ -278,6 +282,21 @@ body {
 	font-size: 1.2em;
 }
 
+.map-container {
+	width: 100%;
+}
+
+.map-container iframe{
+	width: 100%;
+	display: block;
+	pointer-events: none;
+	position: relative;
+}
+
+.map-container iframe.clicked{
+	pointer-events: auto;
+}
+
 @media screen and (max-width: 700px) {
 	.card {
 		width: 100%;
@@ -330,17 +349,11 @@ body {
   margin-right: 1em;
 }
 
-.map-container {
-	width: 100%;
-}
-
-.map-container iframe{
-	width: 100%;
-	display: block;
-	pointer-events: none;
-	position: relative;
-}
-
-.map-container iframe.clicked{
-	pointer-events: auto;
+.badge-verified {
+	background: #5cceff;
+	color: #fff;
+	font-size: 14px;
+	padding: 6px;
+	display: inline-block;
+	border-radius: 100em;
 }
