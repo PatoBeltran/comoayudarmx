@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-export class Intro extends React.Component {
+export class Intro extends React.Component<any, any> {
   render() {
     return (
         <section className="intro">
@@ -9,7 +9,7 @@ export class Intro extends React.Component {
             <h4 className="intro__location"><i className="fa fa-globe"></i>CDMX, Puebla, Morelos</h4>
             <div className="buttons">
               <a className="button" href="#cards">¿Cómo ayudar?</a>
-              <a className="button modal__link" href="#" data-modal="new">Públicar <i className="fa fa-edit"></i></a>
+              <a className="button modal__link" href="#" onClick={ () => this.props.show_about() } data-modal="new">Públicar <i className="fa fa-edit"></i></a>
             </div>
           </div>
         </section>
