@@ -8,7 +8,7 @@ interface ICardProps {
     moreInfo: string
 }
 
-export default class Card extends React.Component<ICardProps, any> {
+export class CardItem extends React.Component<ICardProps, any> {
   render() {
     return (
         <article className="card">
