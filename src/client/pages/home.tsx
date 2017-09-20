@@ -1,26 +1,47 @@
 import * as React from 'react';
-import { MainHeader } from '../components/header'
-import { Intro } from '../components/intro'
-import { AboutModal } from '../components/aboutModal'
-import { HowToModal } from '../components/howtoModal'
+import { connect } from 'react-redux';
 
-import Cards from '../containers/cards'
+import { MainHeader } from '../components/header';
+import { Intro } from '../components/intro';
+import { AboutModal } from '../components/aboutModal';
+import { HowToModal } from '../components/howtoModal';
+import { ModalType } from '../types';
+import Cards from '../containers/cards';
 
-interface IHomeProps {
-  showAboutModal: boolean,
-  closeModal: (ModalType) => void
-}
+import { toggle_modal } from '../actions'
 
-export class Home extends React.Component<IHomeProps, any> {
+class Home extends React.Component<any, any> {
   render() {
     return (
       <div>
-        <MainHeader />
+        <MainHeader show_about={this.props.show_about}/>
         <Intro />
         <Cards />
-        <AboutModal display={this.props.showAboutModal} close={this.props.closeModal}/>
-        <HowToModal display={this.props.showAboutModal} close={this.props.closeModal}/>
+        <AboutModal display={this.props.showAboutModal} close={this.props.hide_about}/>
+        <HowToModal display={this.props.showHowToModal} close={this.props.hide_howto}/>
       </div>
     );
   }
 }
+
+function mapStateToProps(state: any) {
+  const showAboutModal = state.modals && state.modals.type == ModalType.About && state.modals.showing;
+  const showHowToModal = state.modals && state.modals.type == ModalType.HowTo && state.modals.showing;
+  console.log(state);
+
+  return {
+    showAboutModal: showAboutModal,
+    showHowToModal: showHowToModal,
+  }
+}
+
+function mapDispatchToProps(dispatch: any) {
+  return {
+      show_about: () => dispatch(toggle_modal(ModalType.About, true)),
+      hide_about: () => dispatch(toggle_modal(ModalType.About, false)),
+      show_howto: () => dispatch(toggle_modal(ModalType.HowTo, true)),
+      hide_howto: () => dispatch(toggle_modal(ModalType.HowTo, false)),      
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home)

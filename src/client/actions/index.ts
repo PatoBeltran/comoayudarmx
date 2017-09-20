@@ -1,14 +1,22 @@
-export enum ActionType {
-    LOAD_CARDS = 'LOAD_CARDS',    
-    ADD_CARD = 'ADD_CARD',
-};
+import { ActionType, Action, ModalType } from '../types';
 
-export type Action = {
-    type: ActionType.ADD_CARD,
-    card: any
-} | {
-    type: ActionType.LOAD_CARDS,
-    cards: any[]
+export function toggle_modal(type: ModalType, show: boolean): any {
+    var aType;
+    switch(type) {
+        case ModalType.About:
+            aType = show ? ActionType.SHOW_ABOUT_MODAL : ActionType.HIDE_ABOUT_MODAL;
+            break;
+        case ModalType.HowTo:
+            aType = show ? ActionType.SHOW_HOWTO_MODAL : ActionType.HIDE_HOWTO_MODAL;
+            break;
+    }
+    return {
+        type: aType,
+        modal: {
+            type: type,
+            showing: show
+        }
+    }
 }
 
 export function add_card(card: any): Action {

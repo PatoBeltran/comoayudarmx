@@ -1,8 +1,7 @@
 import * as React from 'react';
-import { ModalType } from '../types';
 
 interface IAboutModalProps {
-    close: (ModalType) => void,
+    close: () => void,
     display: boolean
 }
 
@@ -10,7 +9,7 @@ export class AboutModal extends React.Component<IAboutModalProps, any> {
   render() {
     return (
         <section className={`modal ${this.props.display ? 'show' : ''}`} data-modal="about">
-          <a onClick={() => this.props.close(ModalType.About) } className="modal__close">Cerrar</a>
+          <a onClick={() => this.props.close() } className="modal__close">Cerrar</a>
           <div className="modal__container">
             <h2>Acerca de Como Ayudar</h2>
             <p>Este proyecto sin fines de lucro busca crear un repositorio de información para centralizar el apoyo y la rápida distribución de ayuda.</p>

@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 
-import {Home} from './pages/home';
+import Home from './pages/home';
 import {Volunteer} from './pages/volunteer';
 import {Contact} from './pages/contact';
 
