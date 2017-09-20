@@ -1,4 +1,4 @@
-import { ModalType, ModalState, ActionType, Action } from '../types';
+import { ModalType, ModalState, ActionType, Action } from '../../types';
 
 export function modals(state: ModalState = { type: ModalType.NotSpecified, showing: false }, action: Action) {
     switch (action.type) {

@@ -1,3 +1,13 @@
+export enum CardType {
+    Monetary,
+    Food,
+    Volunteer,
+    Medical,
+    Blood,
+    Housing,
+    Assestment
+}
+
 export enum ModalType {
     NotSpecified,
     About,
@@ -16,6 +26,7 @@ export enum ActionType {
     HIDE_ABOUT_MODAL = 'HIDE_ABOUT_MODAL',
     SHOW_HOWTO_MODAL = 'SHOW_HOWTO_MODAL',
     HIDE_HOWTO_MODAL = 'HIDE_HOWTO_MODAL',
+    LOAD_CONTACTS = 'LOAD_CONTACTS',
 };
 
 export type Action = {
@@ -36,4 +47,7 @@ export type Action = {
 } | {
     type: ActionType.HIDE_HOWTO_MODAL,
     modal: ModalState
+} | {
+    type: ActionType.LOAD_CONTACTS,
+    contacts: any[]
 }

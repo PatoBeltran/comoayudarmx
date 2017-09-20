@@ -9,8 +9,6 @@ enum FilterType {
 }
 
 class Cards extends React.Component<any, any> {
-
-    
     private _createFilters(cards: any[], filterType: FilterType) {
         var flags = {}, output: string[] = [];
         cards.forEach(card => {
